@@ -1,0 +1,14 @@
+<div *ngIf="bracket">
+  <h1>
+    Bracket {{bracket.name}}
+  </h1>
+
+  <div *ngFor="let match of bracket.matches">
+    <span *ngIf="match.winner">{{match.winner}} won !</span>
+    <span *ngIf="!match.winner">
+      <button (click)="won(match, 'a')">Gagné</button>
+      {{match.playerA}} | {{match.playerB}}
+      <button (click)="won(match, 'b')">Gagné</button>
+    </span>
+  </div>
+</div>

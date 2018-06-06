@@ -1,0 +1,11 @@
+<div *ngIf="matches">
+  <div *ngFor="let match of matches">
+    <span *ngIf="match.winner">{{match.winner}} won !</span>
+    <span *ngIf="!match.winner">
+      <button (click)="won(match, 'a')">Gagné</button>
+      {{match.playerA}} | {{match.playerB}}
+      <button (click)="won(match, 'b')">Gagné</button>
+    </span>
+  </div>
+  <button [disabled]="getRemainingMatches() != 0" (click)="next()">Next</button>
+</div>

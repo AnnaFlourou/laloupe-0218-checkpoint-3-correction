@@ -1,0 +1,6 @@
+<div *ngIf="brackets">
+  <div *ngFor="let bracket of brackets" [routerLink]="['/bracket', bracket._id]">
+    Bracket {{bracket.name}} ({{getRemainingMatches(bracket)}} remaining matches)
+  </div>
+  <button [disabled]="getAllRemainingMatches() != 0" (click)="next()">Next</button>
+</div>
